@@ -38,6 +38,7 @@ nav{
     background: var(--blue);
     height: 4rem;
     font-family: 'Days One', sans-serif;
+    border-bottom: 1px solid var(--white);
 }
 
 nav div:nth-child(1){
@@ -233,7 +234,7 @@ textarea{
     font-family: Arial;
     padding: 15px 15px;
     outline: none;
-    background:rgb(247, 247, 247);
+    background:rgb(236, 236, 236);
     border:none;
     font-size:1rem;
 }
