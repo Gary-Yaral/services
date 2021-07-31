@@ -1,0 +1,453 @@
+:root{
+    --gray: #64818C;
+    --blue: #0a2740;
+    --sky: #94c6f2;
+    --orange: #f29705;
+    --white-gray: #f2f2f2;
+    --white: #fff;
+    --modal: #0a2740e3;
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    display:flex;
+    justify-content: center;
+    background: var(--sky);
+    scroll-behavior: smooth;
+}
+
+body{
+    width:100;
+    min-height:100vh;
+    background:var(--white-gray);
+    font-family: 'Days One', sans-serif;
+    max-width: 1000px;
+}
+
+nav{
+    width:100%;
+    color: var(--white);
+    display:grid;
+    grid-template-columns: .5fr 1fr;
+    background: var(--gray);
+    height: 4rem;
+    font-family: 'Days One', sans-serif;
+}
+
+nav div:nth-child(1){
+    width:100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+}
+
+.title{
+    min-width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(var(--gray),var(--blue));
+    color: var(--white);
+    font-family: 'Days One', sans-serif;
+    font-size: 1.3rem;
+    flex-direction: column;
+    padding:2rem;
+}
+
+.title h1{
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+.title button{
+    display: flex;
+    width: 8rem;
+    height: 2rem; 
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background: var(--orange);
+    border:none;
+    outline:none;
+    cursor: pointer;
+    font-family: 'Days One', sans-serif;
+}
+
+nav div:nth-child(1) h1{
+    margin-left: 50px;
+}
+
+nav div:nth-child(2){
+    display:flex;
+    justify-content: flex-end;
+}
+
+nav ul{
+    width: 80%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    gap: 1rem;
+    height:100%;
+    align-content: center;
+    justify-items: center;
+    margin-right: 50px;
+}
+
+nav ul li {
+    cursor: pointer;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    align-items: center;
+}
+
+nav li a{
+    display:flex;
+    text-decoration: none;
+    color:var(--white);
+}
+
+nav li:hover{
+    background:var(--orange);
+    color:var(--white);
+    border-radius: .5rem;
+    font-size:.8rem;
+}
+
+.hamburguer{
+    display:none;
+}
+
+#services{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.services{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-self: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card{
+    width:250px;
+    height: 250px;
+    background: var(--white);
+    box-shadow: 0px 10px 15px 1px rgb(167, 167, 167);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:nth-child(1),
+.card:nth-child(3){
+    display:flex;
+    justify-self: right;
+}
+
+.card img{
+    width: 50%;
+}
+
+.card h3{
+    color: var(--blue);
+}
+
+.line{
+    width: 6rem;
+    border: 1px solid var(--orange);
+}
+
+.about-me{
+    width:100%;
+    background:var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#about-me{
+    margin-top: 1rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me img{
+    width: 100px;
+    border-radius:50%;
+    margin: 1.5rem 0;
+}
+
+.about-me p{
+    font-family: Arial;
+    width: 100%;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+.whatsapp{
+    margin-top: 2rem;;
+    width:50%;
+    height: 300px;
+}
+
+.whatsapp h2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+textarea{
+    min-width:100%;
+    max-width:100%;
+    min-height: 150px;
+    max-height: 150px;
+    font-family: Arial;
+    padding: 15px 15px;
+    outline: none;
+    background:rgb(247, 247, 247);
+    border:none;
+    font-size:1rem;
+}
+
+textarea::placeholder{
+    color:rgb(192, 192, 192);
+}
+
+form input[type="submit"]{
+    width: 100%;
+    height: 2rem;
+    background: var(--orange);
+    color:var(--white);
+    outline:none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Days One', sans-serif;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    height:4rem;
+    background: var(--gray);
+    color: var(--white);
+    align-items: center;
+}
+
+.footer-name{
+    margin: 0 .5rem;
+    color:var(--orange);
+    text-decoration: none;
+}
+
+h2{
+    scroll-margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 730px){
+    nav div:nth-child(1) h1{
+        margin-left: 50px;
+        font-size: 1.4rem;
+    }
+
+    nav ul{
+        width: 70%;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style: none;
+        gap: 1rem;
+        height:100%;
+        align-content: center;
+        justify-items: center;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 675px){
+    nav{
+        width:100%;
+        color: var(--white);
+        display:grid;
+        grid-template-columns: 1fr .5fr;
+        background: var(--gray);
+        height: 4rem;
+        font-family: 'Days One', sans-serif;
+    }
+
+    nav ul{
+        display: none;
+
+    }
+
+    .hamburguer{
+        width:2rem;
+        height:2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:.3rem;
+        align-content: center;
+        justify-items: flex-end;
+        align-self: center;
+        margin-right: 10%;
+        cursor: pointer;
+    }
+
+    .hamburguer hr{
+        border: 2px solid var(--white);
+        border-radius: .5rem
+    }
+
+    .hamburguer hr:nth-child(1){
+        display:flex;
+        width: 100%;
+        justify-self: right;
+    }
+
+    .hamburguer hr:nth-child(2){
+        display:flex;
+        width: 100%;
+        justify-self: right;
+    }
+
+    .hamburguer hr:nth-child(3){
+        display:flex;
+        width: 80%;
+        justify-self: right;
+    }
+
+    .modal-navbar{
+        transition: all 1s ease-out;
+        display:flex;
+        width: 100%;
+        height:100vh;
+        background:var(--modal);
+        position:fixed;
+        z-index: 999;
+        top:0;
+        right:0;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-navbar ul{
+        display:flex;
+        flex-direction: column;
+        list-style: none;
+        width:100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-navbar li{
+        display:flex;
+        width:100%;
+        justify-content: center;
+        height: 2rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .modal-navbar a{
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    .modal-navbar label{
+        display:flex;
+        position: absolute;
+        top:1rem;
+        right: 1rem;
+        color: var(--white);
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .hidden{
+        display:none;
+        background:red;
+    }    
+
+}
+
+
+@media screen and (max-width: 630px){
+    
+
+    nav div:nth-child(2){
+        display:flex;
+        justify-content: flex-end;
+        align-content: center;
+        height: 100%;
+    }
+
+    .services{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-self: center;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .title h1{
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 1.5rem;
+
+    }
+
+    #about-me{
+        width:80%;
+    }
+
+    .whatsapp{
+        width:90%;
+    }
+
+    textarea{
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 630px){
+    nav div:nth-child(1) h1{
+        font-size:1rem;
+    }
+}
+
+@media screen and (max-width: 350px){
+    footer{
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/version5.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gary Yaral</title>
+</head>
+<body>
+    <main>
+        <nav>
+            <div>
+                <h1>GARY YARAL</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#aboutme">Sobre mí</a></li>
+                    <li><a href="#write-me">Escríbeme</a></li>
+                </ul>
+                <a href="" class="hamburguer" id="hamburguer">
+                    <hr>
+                    <hr>
+                    <hr>
+                </a>
+            </div>
+        </nav>
+        <section class="title">
+            <h1>Diseñamos porque nos motiva verte alcanzar el éxito</h1>
+            <button>Escríbeme</button>
+        </section>
+        <h2 id="services">Servicios</h2>
+        <section class="services">
+            <div class="card">
+                <img src="images/computer.svg" alt="Design">
+                <h3>Multimedia</h3>
+                <hr class="line">
+            </div>
+            <div class="card">
+                <img src="images/algebra.svg" alt="Maths">
+                <h3>Matemáticas</h3>
+                <hr class="line">
+            </div>
+            <div class="card">
+                <img src="images/web-programming.svg" alt="Web">
+                <h3>Web</h3>
+                <hr class="line">
+            </div>
+            <div class="card">
+                <img src="images/presentation.svg" alt="Teach">
+                <h3>Clases</h3>
+                <hr class="line">
+            </div>
+        </section>
+        <section class="about-me">
+            <div id="about-me">
+                <h2 id="aboutme">Sobre mí</h2>
+                <img src="images/version5.png" alt="">
+                <p>Soy docente de Matemáticas y programación, tambien me dedico al desarrollo de sitios web y a la creación o edición de elementos multimedias (vídeos, logotipos, publicidad). Permíteme ayudarte a avanzar en tu camino al éxito.</p>
+            </div>
+            <div class ="whatsapp">
+                <h2 id="write-me">¡Escríbeme!</h2>
+                <form id="form">
+                    <textarea name="message" cols="30" row="30" placeholder="¡Hola! Me interesa su servicio de..."></textarea>
+                    <input type="submit" value="Enviar mensaje">
+                </form>
+            </div>
+        </section>
+        <div id= "modal-navbar" class="modal-navbar hidden">
+            <label id="btnClose">X</label>
+            <ul>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#aboutme">Sobre mí</a></li>
+                <li><a href="#write-me">Escríbeme</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        Powered by: <a href="" class="footer-name">Gary Yaral</a> &copy <span id="year">2021</span>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
