@@ -2,7 +2,9 @@ const modal = document.querySelector('#modal-navbar'),
 btnClose = document.querySelector('#btnClose'),
 btnHamburguer = document.querySelector('#hamburguer'),
 form = document.querySelector('#form'),
-text = document.querySelector('textarea');
+text = document.querySelector('textarea'),
+year = document.querySelector('#year'),
+date = new Date();
 
 btnClose.addEventListener('click', () => {
     modal.classList.toggle('hidden');
@@ -37,3 +39,5 @@ modal.addEventListener('click', (e) => {
         modal.classList.toggle('hidden');
     }
 })
+
+year.innerHTML = date.getFullYear();

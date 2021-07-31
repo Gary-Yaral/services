@@ -282,6 +282,10 @@ h2{
     display:none;
 }
 
+#year{
+    margin-right: .5rem;
+}
+
 @media screen and (max-width: 730px){
     nav div:nth-child(1) h1{
         margin-left: 50px;
