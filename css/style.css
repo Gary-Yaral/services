@@ -35,7 +35,7 @@ nav{
     color: var(--white);
     display:grid;
     grid-template-columns: .5fr 1fr;
-    background: var(--gray);
+    background: var(--blue);
     height: 4rem;
     font-family: 'Days One', sans-serif;
 }
@@ -66,10 +66,11 @@ nav div:nth-child(1){
     justify-content: center;
 }
 
-.title button{
+.title a{
+    text-decoration: none;
     display: flex;
-    width: 8rem;
-    height: 2rem; 
+    width: 10rem;
+    height: 2.5rem; 
     margin-top: 1rem;
     justify-content: center;
     align-items: center;
@@ -78,7 +79,9 @@ nav div:nth-child(1){
     border:none;
     outline:none;
     cursor: pointer;
+    border-radius: .5rem;
     font-family: 'Days One', sans-serif;
+    font-size:1rem;
 }
 
 nav div:nth-child(1) h1{
@@ -241,20 +244,22 @@ textarea::placeholder{
 
 form input[type="submit"]{
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     background: var(--orange);
     color:var(--white);
     outline:none;
     border: none;
     cursor: pointer;
     font-family: 'Days One', sans-serif;
+    border-radius: .5rem;
+    font-size: 1rem;
 }
 
 footer{
     display: flex;
     justify-content: center;
     height:4rem;
-    background: var(--gray);
+    background: var(--blue);
     color: var(--white);
     align-items: center;
 }
@@ -269,6 +274,9 @@ h2{
     scroll-margin-top: 1rem;
 }
 
+.modal-navbar{
+    display:none;
+}
 
 @media screen and (max-width: 730px){
     nav div:nth-child(1) h1{
@@ -292,10 +300,8 @@ h2{
 @media screen and (max-width: 675px){
     nav{
         width:100%;
-        color: var(--white);
         display:grid;
         grid-template-columns: 1fr .5fr;
-        background: var(--gray);
         height: 4rem;
         font-family: 'Days One', sans-serif;
     }
@@ -387,12 +393,11 @@ h2{
         color: var(--white);
         font-size: 2rem;
         cursor: pointer;
-    }
+    }  
 
     .hidden{
         display:none;
-        background:red;
-    }    
+    } 
 
 }
 
