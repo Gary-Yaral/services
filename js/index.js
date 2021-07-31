@@ -31,3 +31,9 @@ form.addEventListener('submit', (e) =>{
 
     window.location = "https://api.whatsapp.com/send?phone=593982055157&text="+string;
 })
+
+modal.addEventListener('click', (e) => {
+    if(e.target.parentNode.classList.contains('li')){
+        modal.classList.toggle('hidden');
+    }
+})
