@@ -324,7 +324,7 @@ h2{
         align-content: center;
         justify-items: flex-end;
         align-self: center;
-        margin-right: 10%;
+        margin-right: 50px;
         cursor: pointer;
     }
 
@@ -453,6 +453,19 @@ h2{
     nav div:nth-child(1) h1{
         font-size:1rem;
     }
+}
+
+@media screen and (max-width: 450px){
+
+    .hamburguer{
+        margin-right: 20px;
+    }
+
+    nav div:nth-child(1) h1{
+        margin-left: 20px;
+    }
+
+
 }
 
 @media screen and (max-width: 350px){
