@@ -1,26 +1,33 @@
-const modal = document.querySelector('#modal-navbar'),
-btnClose = document.querySelector('#btnClose'),
-btnHamburguer = document.querySelector('#hamburguer'),
-form = document.querySelector('#form'),
-text = document.querySelector('textarea'),
-year = document.querySelector('#year'),
-date = new Date();
+const modal = document.querySelector('#modal-navbar')
+const btnHamburguer = document.querySelector('.fa-bars')
+const logo = document.querySelector('.logo')
 
-btnClose.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
-})
+
+const form = document.querySelector('#form')
+const text = document.querySelector('textarea')
+const year = document.querySelector('#year')
+const date = new Date();
+
 
 btnHamburguer.addEventListener('click', (event) => {
     event.preventDefault();
-    modal.classList.toggle('hidden');
+    modal.classList.toggle('visible');
+})
+
+logo.addEventListener('click', (event) => {
+    window.location = "#title"
 })
 
 form.addEventListener('submit', (e) =>{ 
     e.preventDefault();
     if(text.value.length === 0) {
-        alert('Aún no me has escrito lo que necesitas');
+         
+        Swal.fire({
+            title: "Atención",
+            text: 'Debes escribir algo para enviar'
+        })
         text.focus();
-        return;
+        return
     }
     let string = "";
     for(let i = 0; i< text.value.length; i++){

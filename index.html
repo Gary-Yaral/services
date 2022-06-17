@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/version5.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Gary Yaral</title>
 </head>
 <body>
-    <main>
-        <nav>
-            <div>
-                <h1>GARY YARAL</h1>
+    <main class="container">
+        <nav class="navigation">
+            <div class="name">
+                <a href="#title">GARY YARAL</a>
+                <img class="logo" src="images/logo.jpg" alt="">
             </div>
-            <div>
-                <ul>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#aboutme">Sobre mí</a></li>
-                    <li><a href="#write-me">Escríbeme</a></li>
-                </ul>
-                <a href="" class="hamburguer" id="hamburguer">
-                    <hr>
-                    <hr>
-                    <hr>
-                </a>
+            <div class="nav-options">
+                <div>
+                    <a href="#services">Servicios</a>
+                </div>
+                <div>
+                    <a href="#aboutme">Sobre mí</a>
+                </div>
+                <div>
+                    <a href="#write-me">Escríbeme</a>
+                </div>
+                <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
-        <section class="title">
-            <h1>Diseñamos porque nos motiva verte alcanzar el éxito</h1>
-            <a href="#write-me">Escríbeme</a>
+        <section class="title" id="title">
+            <div>
+                <h1>Diseñamos porque nos motiva verte alcanzar el éxito</h1>
+                <a href="#write-me">Escríbeme</a>
+            </div>
         </section>
         <h2 id="services">Servicios</h2>
         <section class="services">
@@ -55,7 +59,7 @@
                 <hr class="line">
             </div>
         </section>
-        <section class="about-me">
+        <section class="about-me" id="about">
             <div id="about-me">
                 <h2 id="aboutme">Sobre mí</h2>
                 <img src="images/picture.jpg" alt="">
@@ -69,18 +73,24 @@
                 </form>
             </div>
         </section>
-        <div id= "modal-navbar" class="modal-navbar hidden">
-            <label id="btnClose">X</label>
-            <ul>
-                <li class="li"><a href="#services">Servicios</a></li>
-                <li class="li"><a href="#aboutme">Sobre mí</a></li>
-                <li class="li"><a href="#write-me">Escríbeme</a></li>
-            </ul>
+        <div id= "modal-navbar" class="modal-navbar ">
+            <section>
+                <div class="btn-link">
+                    <a href="#services" class="link">Servicios</a>
+                </div>
+                <div class="btn-link">
+                    <a href="#aboutme" class="link">Sobre mí</a>
+                </div>
+                <div class="btn-link">
+                    <a href="#write-me" class="link">Escríbeme</a>
+                </div>
+            </section>
         </div>
+        <footer>
+            Powered by: <a href="https://www.facebook.com/gary.yaral" class="footer-name">Gary Yaral</a><span id="year"></span> &copy
+        </footer>
     </main>
-    <footer>
-        Powered by: <a href="https://www.facebook.com/gary.yaral" class="footer-name">Gary Yaral</a><span id="year"></span>&copy
-    </footer>
+    <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
