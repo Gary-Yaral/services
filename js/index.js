@@ -2,7 +2,6 @@ const modal = document.querySelector('#modal-navbar')
 const btnHamburguer = document.querySelector('.fa-bars')
 const logo = document.querySelector('.logo')
 
-
 const form = document.querySelector('#form')
 const text = document.querySelector('textarea')
 const year = document.querySelector('#year')
