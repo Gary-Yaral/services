@@ -10,7 +10,7 @@
     --bg-hover: rgb(9, 50, 61);
     --sky-color: rgb(24, 178, 229);
     --bg-dark: rgb(1, 11, 26);
-    --nav-height: 4rem;
+    --nav-height: 5rem;
 }
 
 html {
@@ -124,10 +124,6 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* background: rgb(0,36,6);
-    background: linear-gradient(318deg, rgba(0,36,6,1) 7%, rgba(126,121,61,1) 44%, rgba(28,35,46,1) 72%, rgba(158,146,83,1) 100%, rgba(0,212,255,1) 100%);  
-    width: 100%;
-    height: fit-content; */
     padding: 1rem;
     gap: 1rem;
 }
@@ -249,6 +245,7 @@ p {
 }
 
 #form textarea {
+    margin-top: 2rem;
     padding: 10px;
     height: 100%;
     width: 100%;
@@ -264,16 +261,16 @@ textarea::placeholder {
 }
 
 input[type=submit] {
-    width: fit-content;
+    width: 12rem;
     background: rgb(0, 181, 90);
     color: white;
     border: none;
-    padding: 10px;
-    height: 2.5rem;
+    padding: 1rem;
+    height: 3rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
-
-
-
 
 footer {
     margin-top: 2rem;
@@ -293,6 +290,9 @@ footer a {
 }
 
 @media screen and (max-width: 700px) {
+    #form textarea {
+        margin-top: 2rem;
+    }
     .card-name:hover {
         font-size: 2.3rem;
         transition: .2s ease-in-out;
@@ -329,6 +329,7 @@ footer a {
         justify-content: center;
         align-items: center;
         color: var(--sky-color);
+        font-size: 1.5rem;
     }
 
     .fa-bars:hover {
@@ -353,7 +354,7 @@ footer a {
     .nav-options a {
         width: 100%;
         color: var(--bg-dark);
-        padding: 10px;
+        padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
