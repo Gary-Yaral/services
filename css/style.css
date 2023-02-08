@@ -11,6 +11,7 @@
     --sky-color: rgb(24, 178, 229);
     --bg-dark: rgb(1, 11, 26);
     --nav-height: 5rem;
+    --scroll-top: calc(var(--nav-height) + 1rem);
 }
 
 html {
@@ -28,6 +29,7 @@ body {
     background-size: cover;
     overflow: auto;
     background:var(--bg-dark);
+    padding-top: var(--nav-height);
 }
 
 .container{
@@ -59,7 +61,10 @@ nav {
     box-sizing: border-box;
     height: var(--nav-height);
     border-bottom: 1px solid rgb(231, 231, 231);
-    position: relative;
+    position: fixed;
+    z-index: 5;
+    background: var(--bg-dark);
+    top:0;
 }
 
 .name {
@@ -114,7 +119,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-margin-top: 1rem;
+    scroll-margin-top: var(--scroll-top);
     margin: 2rem 0;
 }
 
@@ -189,6 +194,7 @@ nav {
     justify-content: center;
     color: var(--sky-color);
     margin: 2rem 0;
+    scroll-margin-top: var(--scroll-top);
 }
 
 .content {
