@@ -8,88 +8,85 @@
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
     <title>Gary Yaral</title>
 </head>
 <body>
     <main class="container">
-        <nav class="navigation">
+        <nav>
             <div class="name">
                 <a href="#title">GARY YARAL</a>
-                <img class="logo" src="images/logo.jpg" alt="">
             </div>
-            <div class="nav-options">
-                <div>
-                    <a href="#services">Servicios</a>
-                </div>
-                <div>
-                    <a href="#aboutme">Sobre mí</a>
-                </div>
-                <div>
-                    <a href="#write-me">Escríbeme</a>
-                </div>
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </nav>
-        <section class="title" id="title">
-            <div>
-                <h1>Diseñamos porque nos motiva verte alcanzar el éxito</h1>
+            <i class="fa-solid fa-bars"></i>
+            <div class="nav-options hide-nav">
+                <a href="#services">Servicios</a>
+                <a href="#aboutme">Sobre mí</a>
                 <a href="#write-me">Escríbeme</a>
             </div>
-        </section>
+        </nav>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="images/img-1.webp" alt=""></div>
+              <div class="swiper-slide"><img src="images/img-2.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/img-3.jpg" alt=""></div>
+
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        
         <h2 id="services">Servicios</h2>
-        <section class="services">
+        <section class="services-data">
             <div class="card">
-                <img src="images/computer.svg" alt="Design">
-                <h3>Multimedia</h3>
-                <hr class="line">
+                <img src="images/multimedia.jpg" alt="Design">
+                <h3 class="card-name">Multimedia</h3>
             </div>
             <div class="card">
-                <img src="images/algebra.svg" alt="Maths">
-                <h3>Matemáticas</h3>
-                <hr class="line">
+                <img src="images/clases.jpg" alt="Design">
+                <h3 class="card-name">Clases</h3>
             </div>
             <div class="card">
-                <img src="images/web-programming.svg" alt="Web">
-                <h3>Web</h3>
-                <hr class="line">
+                <img src="images/matematicas.jpg" alt="Design">
+                <h3 class="card-name">Matemáticas</h3>
             </div>
             <div class="card">
-                <img src="images/presentation.svg" alt="Teach">
-                <h3>Clases</h3>
-                <hr class="line">
+                <img src="images/programacion.jpg" alt="Design">
+                <h3 class="card-name">Programación</h3>
+            </div>
+            <div class="card">
+                <img src="images/ui.jpg" alt="Design">
+                <h3 class="card-name">UI Design</h3>
             </div>
         </section>
         <section class="about-me" id="about">
-            <div id="about-me">
-                <h2 id="aboutme">Sobre mí</h2>
-                <img src="images/picture.jpg" alt="">
-                <p>Soy docente de Matemáticas y programación, tambien me dedico al desarrollo de sitios web y a la creación o edición de elementos multimedia (vídeos, logotipos, publicidad). Permíteme ayudarte a avanzar en tu camino al éxito.</p>
-            </div>
-            <div class ="whatsapp">
-                <h2 id="write-me">¡Escríbeme!</h2>
-                <form id="form">
-                    <textarea name="message" cols="30" row="30" placeholder="¡Hola! Me interesa su servicio de..."></textarea>
-                    <input type="submit" value="Enviar whatsapp">
-                </form>
+            <div id="description">
+                <h2 id="aboutme" class="about-title">Sobre mí</h2>
+                <div class="content">
+                    <img src="images/picture.jpg" class="img-me" alt="">
+                    <p>Soy desarrollador de software con más de 5 años de experiencia en este rubro, manejo lenguajes de programación como: java, javascript, python, php. Además, me apasiona las tecnologias de testing, diseño UI, bases de datos (mysql, mongo), librerias como react, jquery, flask. Si tienes una idea de software escríbeme en el formulario de abajo</p>
+                    <form id="form">
+                        <textarea name="message" cols="30" row="30" placeholder="¡Hola! Me interesa su servicio de..."></textarea>
+                        <input type="submit" value="Enviar whatsapp">
+                    </form>
+                </div>
             </div>
         </section>
-        <div id= "modal-navbar" class="modal-navbar ">
-            <section>
-                <div class="btn-link">
-                    <a href="#services" class="link">Servicios</a>
-                </div>
-                <div class="btn-link">
-                    <a href="#aboutme" class="link">Sobre mí</a>
-                </div>
-                <div class="btn-link">
-                    <a href="#write-me" class="link">Escríbeme</a>
-                </div>
-            </section>
-        </div>
         <footer>
-            Powered by: <a href="https://www.facebook.com/gary.yaral" class="footer-name">Gary Yaral</a><span id="year"></span> &copy
-        </footer>
+            Powered by: <a href="https://www.facebook.com/gary.yaral" class="footer-name">Gary Yaral</a>&copy <span id="year" style="margin-left: 5px;"></span>
+        </footer> 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/index.js"></script>
 </body>

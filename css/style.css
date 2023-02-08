@@ -6,6 +6,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates:wght@500&display=swap');
 
+:root {
+    --bg-hover: rgb(9, 50, 61);
+    --sky-color: rgb(24, 178, 229);
+    --bg-dark: rgb(1, 11, 26);
+    --nav-height: 4rem;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -18,284 +25,261 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
-    background:url(../images/texture1.jpg) no-repeat;
     background-size: cover;
     overflow: auto;
+    background:var(--bg-dark);
 }
 
 .container{
     display: flex;
-    background: white;
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
-    position: relative;
     align-items: center;
     box-sizing: border-box;
 }
+.swiper {
+    width: 100%;
+    height: 500px;
+}
 
-.navigation {
-    max-width: 800px;
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav {
     width: 100%;
     display: flex;
-    background: rgb(255, 255, 255);
     align-items: center;
+    justify-content: space-between;
     padding: 0 2rem;
     box-sizing: border-box;
-    height: 4rem;
-    position: fixed;
-    top: 0;
-    left: auto;
+    height: var(--nav-height);
     border-bottom: 1px solid rgb(231, 231, 231);
+    position: relative;
 }
 
 .name {
-    font-size: 1rem;
-    min-width: 12rem;
+    font-size: 1.5rem;
+    width: fit-content;
 }
 
 .name a {
     text-decoration: none;
-    color: #0a2740;
+    color:var(--sky-color);
     font-weight: bold;
-
 }
 
 .nav-options {
     display: flex;
-    width: 100%;
+    width: fit-content;
     height: 100%;
     justify-content: flex-end;
     height: 100%;
     align-items: center;
 }
 
-.nav-options div {
-    width: 6rem;
-    background: rgb(255, 255, 255);
+.nav-options a {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-}
-
-.nav-options div:hover {
-    min-width: 6rem;
-    background: rgb(246, 246, 246);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-   
-}
-
-.nav-options div a { 
+    padding: 10px;
+    width: fit-content;
+    min-width: fit-content;
     text-decoration: none;
+    color: var(--sky-color);
+}
+
+.nav-options a:hover { 
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    color:rgb(0, 0, 0);
+    color:var(--sky-color);
+    background: var(--bg-hover);
     box-sizing: border-box;
 }
 
-
-.nav-options div a:visited { 
-    color: rgb(0, 0, 0);
+.fa-bars {
+    display: none;
 }
 
-.nav-options div:hover a { 
-    color: rgb(4, 124, 164);
-    border-bottom: 2px solid rgb(4, 124, 164);
-    box-sizing: border-box;
-}
-
-.title {
-    scroll-margin-top: 4rem;
-    max-width: 100%;
-    flex-direction: column;
-    display: flex;
-    color: rgb(5, 5, 5);
-    margin-top: 4rem;
-    padding: 4rem;
-    align-items: center;
-    background: url(../images/bg.jpg) center;
-    background-size: cover;
-    height: 350px;
-    align-items: flex-end;
-    box-sizing: border-box;
-}
-
-.title div {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: justify;
-}
-
-.title a {
-    width: fit-content;
-    text-decoration: none;
-    background-color: rgb(234, 255, 0);
+#services { 
+    width: 100%;
     height: 2rem;
-    padding: 1rem;
-    border-radius: 5px;
-    color:rgb(0, 0, 0);
-    font-weight: 600;
-    align-items: center;
+    color: var(--sky-color);
+    font-weight: bold;
     display: flex;
     justify-content: center;
-}
-
-.title a:hover {
-    background:rgb(224, 244, 0);
-    color:rgb(30, 33, 0);
-}
-
-#services {
-    scroll-margin-top: 6rem;
-    margin-top: 2rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
-    gap: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    justify-content: center;
     align-items: center;
+    scroll-margin-top: 1rem;
+    margin: 2rem 0;
+}
+
+.services-data {
+    display: grid;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background: rgb(0,36,6);
+    background: linear-gradient(318deg, rgba(0,36,6,1) 7%, rgba(126,121,61,1) 44%, rgba(28,35,46,1) 72%, rgba(158,146,83,1) 100%, rgba(0,212,255,1) 100%);  
+    width: 100%;
+    height: fit-content; */
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .card {
+    flex-grow: 1;
     display: flex;
-    width:100%;
-    border: 1px solid rgb(215, 215, 215);
-    flex-direction: column;
-    padding: 2rem;
-    box-sizing: border-box;
-    align-items: center;
-    border-radius: 5px;
+    backdrop-filter: blur(6px);
+    height: fit-content;
+    height: 300px;
+    max-height: 300px;
+    width: 400px;
+    position: relative;
 }
 
 .card img {
+    height: 300px;
     width: 100%;
+    object-fit: cover;
+    opacity: .5;
 }
 
-#aboutme {
-    scroll-margin-top: 6rem;
-}
-.about-me {
-    scroll-margin-top: -3rem;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background: #e1e1e1;
-    padding-top: 2rem;
-}
-
-.about-me div {
-    display: flex;
-    flex-direction: column;
+.card-name {
+    position: absolute;
     width: 100%;
-    align-items: center;
-    height: fit-content;
-}
-
-.about-me div img {
-    padding: 0 3rem;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    align-items: center;
-    height: fit-content;
-    border-radius: 50%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.about-me div p {
-    padding: 0 3rem;
-    display: flex;
-    width: 100%;
-    text-align: center;
     justify-content: center;
-    height: fit-content;
-    margin-bottom: 1rem;
+    align-items: center; 
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: white;
+    font-size: 2rem;
+    transition: .2s ease-in-out;
 }
 
-#write-me {
-    scroll-margin-top: 6rem;
+.card-name:hover {
+    font-size: 3rem;
+    transition: .2s ease-in-out;
+}
+
+.about-me {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+}
+
+.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    align-items: center;
+}
+
+.about-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--sky-color);
+    margin: 2rem 0;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.content img, .content p {
+    flex-grow: 1;
+} 
+
+p {
+    max-width: 270px;
+    height: 280px;
+    color: white;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+.img-me {
+ max-width: 300px;
+ object-fit: cover;
+ max-height: 300px;
 }
 
 .whatsapp {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    background: white;
-    padding: 2rem;
-    box-sizing: border-box;
-    border: 1px solid rgb(215, 215, 215);
-}
-
-form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-textarea, 
-input {
-    width: 50%;
-    min-width: 360px;
-    box-sizing: border-box;
+#write-me {
+    width: 100%;
+    color: var(--sky-color);
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
 }
 
-textarea {
-    border-radius: 5px;
-    margin-top: 1rem;
-    height: 8rem;
-    padding: 2rem;
+#form {
+    width: 100%;
+    max-width: 600px;
+    background: transparent;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+#form textarea {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
     resize: none;
-    outline: none;
-    border: 1px solid rgb(215, 215, 215);
-}
-
-input {
-    border-radius: 5px;
     border: none;
-    height: 2rem;
-    margin-top: 1rem;
-    background-color: rgb(234, 255, 0);
+    background: rgba(255, 255, 255, 0.363);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
-input:hover {
+textarea::placeholder {
+    color: white;
+}
+
+input[type=submit] {
+    width: fit-content;
+    background: rgb(0, 181, 90);
+    color: white;
     border: none;
-    height: 2rem;
-    margin-top: 1rem;
-    background-color: rgb(213, 232, 3);
+    padding: 10px;
+    height: 2.5rem;
 }
 
-#year {
-    margin-right: 1px;
-}
+
 
 
 footer {
+    margin-top: 2rem;
     width: 100%;
-    background: #048ABF;
-    height: 3rem;
+    background: rgb(98, 98, 98);
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,167 +287,84 @@ footer {
 }
 
 footer a {
+    margin: 0 5px;
     text-decoration: none;
-    color: rgb(213, 232, 3);
-    margin: 0 10px;  
+    color: orange
 }
 
-.modal-navbar {
-    display: none;
-    position: fixed;
-    top: 4rem;
-    transform: translateX(120px);
-    width: 120px;
-    height: fit-content;
-    z-index: 10;
-    background: #048ABF;
-    transition: .7s ease-in-out;
-    right: 0;
-}
-
-.visible {
-    position: fixed;
-    transform: translateX(-0px);    right: 0;
-    width: 120px;
-    height: fit-content;
-    z-index: 10;
-    transition: .7s ease-in-out;
-}
-
-.btn-link {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-}
-
-section {
-    width: 100%;
-}
-
-.btn-link:hover {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    background: #ffffff;
-}
-
-.btn-link:hover .link {
-    width: 100%;
-    color: #048ABF;
-}
-
-
-.fa-bars {
-    display: none;
-}
-
-.fa-bars:hover {
-    background: #ffffff;
-}
-
-.logo {
-    display: none;
-}
-
-
-@media screen and (max-width: 580px) {
-    .name a {
-        display: none;
+@media screen and (max-width: 700px) {
+    .card-name:hover {
+        font-size: 2.3rem;
+        transition: .2s ease-in-out;
     }
-    .logo {
-        display: flex;
-        width: 3rem;
-        height: 3rem;
-        cursor: pointer;
+
+    p {
+        max-width: 100%;
+        height:fit-content;
+        color: white;
+        text-align: justify;
+        line-height: 1.5rem;
     }
-    .title {
+    
+    .img-me {
+     max-width: 100%;
+     object-fit: cover;
+     height: fit-content;
+    }
+
+    .swiper {
+        width: 100%;
         height: 300px;
+        margin-top: 0;
     }
-
-    .title h1 {
-        font-size: 14px;
-    }
-
-    .services {
-        display: grid;
-        grid-template-columns: 1fr;
+    .swiper img {
         width: 100%;
-        gap: 1rem;
-        box-sizing: border-box;
+        object-fit: contain;
+    }
+
+    .fa-bars {
+        display: flex;
+        width: 2.5rem;
+        height: 2.5rem;
         justify-content: center;
         align-items: center;
-        transition: 1s ease-in-out;
+        color: var(--sky-color);
     }
 
-    .fa-bars { 
-        font-size: 1.5rem;
-        width:10%;
-        width: 3rem;
-        height: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #048ABF;
-    }
-
-    .nav-options div {
-        display: none;
-    }
-
-    textarea,
-    input {
-        min-width: 100%;
-    }
-
-    .modal-navbar {
-        display: flex;
-        width: 120px;
-        box-sizing: border-box;
-        border: 1px solid rgb(229, 229, 229);
-    }
-
-    .link {
-        padding: 15px 10px;
-        display: flex;
-        text-decoration: none;
-        color: #ffffff;
-        width: 100%;
-        height: 100%;
+    .fa-bars:hover {
+        background: var(--bg-hover);
         cursor: pointer;
     }
 
-    .about-me {
-        
-        width: 100%;
-        padding: 1rem;
-        box-sizing: border-box;
-        background: transparent;
-    }
-
-    #about-me {
-        background: #e1e1e1;
-    }
-
-    #aboutme {
-        margin-top: 2rem;
-        display: flex;
-    }
-
-    .whatsapp {
+    .nav-options {
+        opacity: 1;
         display: flex;
         flex-direction: column;
-        margin-top: 2rem;
-        background: white;
-        padding: 2rem 0;
-        box-sizing: border-box;
-        border: 1px solid rgb(215, 215, 215);
-        border: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        background: var(--sky-color);
+        width: 100%;
+        z-index: 10;
+        height: fit-content;
+        transition: opacity 0.1s ease-in-out;
     }
 
-    footer {
-        font-size: 12px;
+    .nav-options a {
+        width: 100%;
+        color: var(--bg-dark);
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    .hide-nav {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.1s ease-in-out;
+    }
+    
 }
 
 

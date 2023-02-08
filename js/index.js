@@ -1,6 +1,5 @@
-const modal = document.querySelector('#modal-navbar')
+const modal = document.querySelector('.nav-options')
 const btnHamburguer = document.querySelector('.fa-bars')
-const logo = document.querySelector('.logo')
 
 const form = document.querySelector('#form')
 const text = document.querySelector('textarea')
@@ -9,13 +8,9 @@ const date = new Date();
 
 
 btnHamburguer.addEventListener('click', (event) => {
-    event.preventDefault();
-    modal.classList.toggle('visible');
+    modal.classList.toggle('hide-nav');
 })
 
-logo.addEventListener('click', (event) => {
-    window.location = "#title"
-})
 
 form.addEventListener('submit', (e) =>{ 
     e.preventDefault();
@@ -25,7 +20,13 @@ form.addEventListener('submit', (e) =>{
             title: "Atención",
             text: 'Debes escribir algo para enviar'
         })
-        text.focus();
+        .then(ok => {
+            if(ok.isConfirmed || ok.isDismissed) {
+                text.focus();
+                return
+            }
+            console.log(ok);
+        })
         return
     }
     let string = "";
@@ -40,10 +41,31 @@ form.addEventListener('submit', (e) =>{
     window.location = "https://api.whatsapp.com/send?phone=593982055157&text="+string;
 })
 
-modal.addEventListener('click', (e) => {
-    if(e.target.parentNode.classList.contains('li')){
-        modal.classList.toggle('hidden');
-    }
+modal.addEventListener('click', function(e) {
+    this.classList.toggle('hide-nav');
+    console.log("click");
 })
 
 year.innerHTML = date.getFullYear();
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
