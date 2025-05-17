@@ -1,71 +1,65 @@
-const modal = document.querySelector('.nav-options')
-const btnHamburguer = document.querySelector('.fa-bars')
-
-const form = document.querySelector('#form')
-const text = document.querySelector('textarea')
-const year = document.querySelector('#year')
+const title = document.querySelector("#title");
+const text = document.querySelector("#message");
+const year = document.querySelector("#year");
+const btnClose = document.querySelector("#whatsapp");
 const date = new Date();
 
+function showModal(service) {
+  document.getElementById("modal").classList.remove("hidden");
+  title.value = service;
+}
 
-btnHamburguer.addEventListener('click', (event) => {
-    modal.classList.toggle('hide-nav');
-})
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
 
+document.getElementById("submit").addEventListener("click", function (e) {
+  e.preventDefault();
+  sendMesage();
+});
 
-form.addEventListener('submit', (e) =>{ 
-    e.preventDefault();
-    if(text.value.length === 0) {
-         
-        Swal.fire({
-            title: "Atención",
-            text: 'Debes escribir algo para enviar'
-        })
-        .then(ok => {
-            if(ok.isConfirmed || ok.isDismissed) {
-                text.focus();
-                return
-            }
-            console.log(ok);
-        })
-        return
+function sendMesage() {
+  if (title.value.length === 0) {
+    Swal.fire({
+      title: "Atención",
+      icon: "info",
+      text: "Debes escribir el tipo de servicio",
+    });
+    return;
+  }
+
+  if (text.value.length === 0) {
+    Swal.fire({
+      title: "Atención",
+      icon: "info",
+      text: "Debes describir tu idea...",
+    });
+    return;
+  }
+  let string = "📱 *";
+  for (let i = 0; i < title.value.length; i++) {
+    let char = title.value[i];
+    if (char === " ") {
+      char = "%20";
     }
-    let string = "";
-    for(let i = 0; i< text.value.length; i++){
-        let char = text.value[i];
-        if(char === " "){
-            char = "%20";
-        }
-        string = string + char;
-    } 
+    string = string + char;
+  }
 
-    window.location = "https://api.whatsapp.com/send?phone=593982055157&text="+string;
-})
+  string += "*%20✅%0A";
 
-modal.addEventListener('click', function(e) {
-    this.classList.toggle('hide-nav');
-    console.log("click");
-})
+  for (let i = 0; i < text.value.length; i++) {
+    let char = text.value[i];
+    if (char === " ") {
+      char = "%20";
+    }
+    string = string + char;
+  }
+
+  title.value = "";
+  text.value = "";
+  closeModal();
+  window.location =
+    "https://api.whatsapp.com/send?phone=593982055157&text=" + string;
+}
 
 year.innerHTML = date.getFullYear();
-
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });

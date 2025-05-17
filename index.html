@@ -1,93 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
-    <title>Gary Yaral</title>
-</head>
-<body>
-    <main class="container">
-        <nav>
-            <div class="name">
-                <a href="#title">GARY YARAL</a>
-            </div>
-            <i class="fa-solid fa-bars"></i>
-            <div class="nav-options hide-nav">
-                <a href="#services">Servicios</a>
-                <a href="#aboutme">Sobre mí</a>
-                <a href="#write-me">Escríbeme</a>
-            </div>
-        </nav>
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="images/img-1.jpg" loading="lazy" alt=""></div>
-              <div class="swiper-slide"><img src="images/img-2.jpg" loading="lazy" alt=""></div>
-              <div class="swiper-slide"><img src="images/img-3.jpg" loading="lazy" alt=""></div>
+<html lang="es">
 
-              ...
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <title>Gary Yaral - Web</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="overlay"></div>
+        <div class="banner-content">
+            <div class="logo">
+                <img src="images/yaral-redes-bordes.png" alt="Gary Yaral Logo">
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <h1>Gary Yaral</h1>
+            <p>Desarrollador | Educador | Innovador</p>
         </div>
-        
-        <h2 id="services">Servicios</h2>
-        <section class="services-data">
-            <div class="card">
-                <img src="images/multimedia.jpg" loading="lazy" alt="Design">
-                <h3 class="card-name">Multimedia</h3>
-            </div>
-            <div class="card">
-                <img src="images/clases.jpg" loading="lazy" alt="Design">
-                <h3 class="card-name">Clases</h3>
-            </div>
-            <div class="card">
-                <img src="images/matematicas.jpg" loading="lazy" alt="Design">
-                <h3 class="card-name">Matemáticas</h3>
-            </div>
-            <div class="card">
-                <img src="images/programacion.jpg" loading="lazy" alt="Design">
-                <h3 class="card-name">Programación</h3>
-            </div>
-            <div class="card">
-                <img src="images/ui.jpg" alt="Design">
-                <h3 class="card-name">UI Design</h3>
-            </div>
-        </section>
-        <section class="about-me" id="about">
-            <div id="description">
-                <h2 id="aboutme" class="about-title">Sobre mí</h2>
-                <div class="content">
-                    <img src="images/picture.jpg" loading="lazy" class="img-me" alt="">
-                    <p>Soy desarrollador de software con más de 5 años de experiencia en este rubro, manejo lenguajes de programación como: java, javascript, python, php. Además, me apasiona las tecnologias de testing, diseño UI, bases de datos (mysql, mongo), librerias como react, jquery, flask. Si tienes una idea de software escríbeme en el formulario de abajo</p>
-                    <form id="form">
-                        <textarea name="message" cols="30" row="30" placeholder="¡Hola! Me interesa su servicio de..." id="write-me"></textarea>
-                        <input type="submit" value="Enviar whatsapp">
-                    </form>
+    </div>
+
+    <section>
+        <h2>Servicios que ofrezco</h2>
+        <div class="cards-container">
+            <div class="card" onclick="showModal('Desarrollo Web')">
+                <img src="images/programacion.jpg" data-title="Software" alt="Desarrollo Web">
+                <div class="card-content">
+                    <h3>Desarrollo Web</h3>
+                    <p>Transforma tu negocio con una web profesional y funcional.</p>
+                    <h2 class="more">Software</h2>
                 </div>
             </div>
-        </section>
-        <footer>
-            Powered by: <a href="https://www.facebook.com/gary.yaral" class="footer-name">Gary Yaral</a>&copy <span id="year" style="margin-left: 5px;"></span>
-        </footer> 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="js/sweetalert2.all.min.js"></script>
+            <div class="card" onclick="showModal('Capacitaciones TIC')">
+                <img src="images/multimedia.jpg" alt="Capacitaciones TIC">
+                <div class="card-content">
+                    <h3>Capacitaciones TIC</h3>
+                    <p>Potencia tus habilidades digitales con formación de calidad.</p>
+                    <h2 class="more">Multimedia</h2>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('Asesoría Educativa')">
+                <img src="images/matematicas.jpg" alt="Asesoría Educativa">
+                <div class="card-content">
+                    <h3>Asesoría Educativa</h3>
+                    <p>Innova tu pedagogía con un enfoque tecnológico.</p>
+                    <h2 class="more">Matemáticas</h2>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('Diseño UI')">
+                <img src="images/ui.jpg" alt="Diseño UI">
+                <div class="card-content">
+                    <h3>Diseño UI</h3>
+                    <p>Interfaces atractivas, modernas y fáciles de usar.</p>
+                    <h2 class="more">Interfaces</h2>
+                </div>
+            </div>
+            <div class="card" onclick="showModal('Planificación Docente')">
+                <img src="images/clases.jpg" alt="Planificación Docente">
+                <div class="card-content">
+                    <h3>Planificación Docente</h3>
+                    <p>Estructura tus clases con claridad, enfoque y creatividad.</p>
+                    <h2 class="more">ERCA - DUA</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-img">
+            <img src="images/foto.jpg" alt="Gary Yaral Foto">
+        </div>
+        <div class="about-text">
+            <h2>Sobre mí</h2>
+            <p>Soy Gary Yaral, apasionado por la tecnología, la educación y el diseño. Ayudo a personas y negocios a
+                transformar sus ideas en soluciones digitales efectivas. Con experiencia en desarrollo web, formación
+                docente y
+                creatividad visual, trabajo cada proyecto con compromiso y pasión.</p>
+        </div>
+    </section>
+
+    <div class="social-section">
+        <h2>Conecta conmigo</h2>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/gary.yaral" target="_blank">Facebook</a>
+            <a href="https://github.com/gary-yaral" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/gary-yaral/">LinkedIn</a>
+            <a href="https://www.youtube.com/@garyyaral">YouTube</a>
+            <footer class="footer-name">
+                Gary Yaral </a>&copy <span id="year"></span>
+            </footer>
+        </div>
+    </div>
+
+    <div class="whatsapp-chat">
+        <a href="#" onclick="showModal('')">💬</a>
+    </div>
+
+    <div class="modal hidden" id="modal">
+        <div class="modal-content">
+            <div id="close" class="circle" onclick="closeModal()">
+                <div class="plus"></div>
+            </div>
+            <h3 id="modal-title">Servicio</h3>
+            <input type="text" id="title" placeholder="Escribe el servicio que necesitas...">
+            <textarea id="message" rows="4" placeholder="Describe tu necesidad o idea..."></textarea>
+            <button id="submit" type="submit">Enviar</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>
